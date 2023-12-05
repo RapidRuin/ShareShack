@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.1.js"></script>
+</head>
+<body>
+    <h2>Welcome, {{ username }}</h2>
+    <div id="chat">
+        <ul id="messages">
+            {% for message in messages %}
+                <li><strong>{{ message.username }}:</strong> {{ message.text }}</li>
+            {% endfor %}
+        </ul>
+        <input id="message" autocomplete="off">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <a href="/logout">Logout</a> | <a href="/account">Account Settings</a>
+
+    <script type="text/javascript">
+        // JavaScriptのSocket.IO関連のコード
+    </script>
+</body>
+</html>
